@@ -1,0 +1,19 @@
+button{
+height: 500px;
+width: 33%;
+}
+
+.Text{
+    display: flex;
+    justify-content: center;
+    background-color: red;
+
+}
+p{
+text-align: center;
+margin: 10px;
+}
+#container{
+    display: flex;
+    gap: 10px;
+}
