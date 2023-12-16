@@ -6,7 +6,7 @@ width: 33%;
 .Text{
     display: flex;
     justify-content: center;
-    background-color: red;
+    background-color:
 
 }
 p{
@@ -17,6 +17,8 @@ color: red;
 #container{
     display: flex;
     gap: 10px;
+    height: 75vh;
+    max-height: 600px;
 }
 
 .Bar{
@@ -47,12 +49,31 @@ html, body{
   #paper {
     background-image: url(img/Paper.png);
     background-size:100% 100%;
+    background-color: transparent;
+    max-height: 85%;
   }
   #rock{
     background-image: url(img/rock.png);
     background-size:100% 100%;
+    background-color: transparent;
+    max-height: 85%;
+
   }
   #scissors{
     background-image: url(img/scissors.png);
     background-size:100% 100%;
+    background-color: transparent;
+    max-height: 85%;
+
+
+  }
+  .resetDiv{
+    display: flex;
+  justify-content: flex-end;
+  }
+  .resetDiv button{
+    max-width: 100px;
+    max-height: 50px;
+    margin-right: 75px;
+    
   }

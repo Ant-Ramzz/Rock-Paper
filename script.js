@@ -12,11 +12,12 @@ function getPlayerChoice(){
 }
 function updateScore(winner){
     const score = document.getElementById("Score")
-    z = score.textContent.split("-")
+    score.textContent === "Choose to start the Game!" ? score.textContent ="0-0" : false;
+    z = (score.textContent.replace(/[^\d.-]/g, '')).split("-")
     winner == 0 ? z[0] = parseInt(z[0]) + 1 :
     winner ==1 ? z[1] = parseInt(z[1]) + 1 :
     false;
-    score.textContent = `${z[0]}-${z[1]}`
+    score.textContent = ` Player ${z[0]} - Computer ${z[1]}`
     
     
 }
@@ -25,6 +26,7 @@ function playround(pSelection,cSelection){
 
     if (pSelection === cSelection) {
         console.log("Tie, try again");
+        alert("Tie! Try Again")
         return;
         //return playround(getPlayerChoice(),getComputerChoice());
     }
@@ -39,7 +41,7 @@ function playround(pSelection,cSelection){
 }
 function changes (){
     const score = document.getElementById("Score")
-    z = score.textContent.split("-")
+    z = (score.textContent.replace(/[^\d.-]/g, '')).split("-")
 
     if (parseInt(z[0]) === 5){
         result.textContent="You Won! The Computer Lost!";
@@ -75,6 +77,15 @@ const paper = document.getElementById("paper");
 const scissors = document.getElementById("scissors");
 const score = document.getElementById("Score")
 const result = document.getElementById('Winner')
+const reset =document.getElementById('resetRound')
+reset.addEventListener("click",() =>{
+    rock.disabled = false;
+    paper.disabled = false;
+    scissors.disabled = false;
+    score.textContent ="Choose to start the Game!";
+    result.textContent ="";
+    
+})
 rock.addEventListener("click", function(){
     playround(rock.id,getComputerChoice())   
 });
